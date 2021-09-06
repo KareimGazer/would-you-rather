@@ -75,8 +75,9 @@ li {
 }
 
 .logout-avatar {
-  height: 50px;
+  height: 25px;
   border-radius: 10px;
+  margin: 4px;
 }
 
 .tweet {

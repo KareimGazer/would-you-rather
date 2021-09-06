@@ -1,44 +1,44 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"; // gives access to dispatch
-// import { handleAddTweet } from "../actions/tweets";
+import { handleAddQuestion } from "../actions/questions";
 import { Redirect } from "react-router-dom";
 
 class NewQuestion extends Component {
   state = {
-    text1: "",
-    text2: "",
+    optionOneText: "",
+    optionTwoText: "",
   };
 
   handleChange1 = (e) => {
-    const text1 = e.target.value;
+    const optionOneText = e.target.value;
     this.setState(() => ({
-      text1,
+      optionOneText,
     }));
   };
   handleChange2 = (e) => {
-    const text2 = e.target.value;
+    const optionTwoText = e.target.value;
     this.setState(() => ({
-      text2,
+      optionTwoText,
     }));
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { text1, text2 } = this.state;
+    const { optionOneText, optionTwoText } = this.state;
     const { dispatch } = this.props;
 
-    //dispatch(handleAddTweet(text, id));
+    dispatch(handleAddQuestion(optionOneText, optionTwoText));
 
     this.setState(() => ({
-      text1: "",
-      text2: "",
+      optionOneText: "",
+      optionTwoText: "",
       toHome: true,
     }));
   };
 
   render() {
-    const { text1, text2, toHome } = this.state;
+    const { optionOneText, optionTwoText, toHome } = this.state;
 
     if (toHome === true) return <Redirect to="/" />;
 
@@ -50,14 +50,14 @@ class NewQuestion extends Component {
         <form className="new-question" onSubmit={this.handleSubmit}>
           <input
             placeholder="Enter option 1 text here"
-            value={text1}
+            value={optionOneText}
             onChange={this.handleChange1}
             className="textarea"
           ></input>
           <h3>OR</h3>
           <input
             placeholder="Enter option 2 text here"
-            value={text2}
+            value={optionTwoText}
             onChange={this.handleChange2}
             className="textarea"
           ></input>
@@ -65,7 +65,7 @@ class NewQuestion extends Component {
           <button
             className="btn"
             type="submit"
-            disabled={text1 === "" || text2 === ""}
+            disabled={optionOneText === "" || optionTwoText === ""}
           >
             Submit
           </button>

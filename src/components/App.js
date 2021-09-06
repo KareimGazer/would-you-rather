@@ -24,7 +24,7 @@ class App extends Component {
           {this.props.loading === true ? (
             <h1 className="center">Loading ...</h1>
           ) : (
-            <NewQuestion></NewQuestion>
+            <Route path="/add" component={NewQuestion} />
           )}
         </div>
       </Router>

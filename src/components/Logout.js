@@ -17,15 +17,13 @@ class Logout extends Component {
     const { id, name, avatarURL } = this.props;
     if (id === null) return null;
     return (
-      <div className="logout">
+      <div className="">
         <span>{`Hello, ${name}`}</span>
-
         <img
           src={avatarURL}
           alt={`Avatar of ${name}`}
           className="logout-avatar"
         />
-
         <button className="replying-to" onClick={(e) => this.logout(e)}>
           Logout
         </button>
