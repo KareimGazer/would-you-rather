@@ -14,6 +14,11 @@ export function getInitialData() {
   );
 }
 
+export function getQuestions(info) {
+  return Promise.all([_getQuestions()]).then(([questions]) => ({
+    questions,
+  }));
+}
 export function saveQuestion(info) {
   return _saveQuestion(info);
 }

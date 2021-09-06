@@ -29,8 +29,12 @@ class App extends Component {
             <h1 className="center">Loading ...</h1>
           ) : (
             <div className="loaded-components">
-              <Route path="/add" component={NewQuestion} />
-              <Route path="/leaderboard" component={Leaderboard} />
+              {authedUser !== "" && (
+                <Route path="/add" component={NewQuestion} />
+              )}
+              {authedUser !== "" && (
+                <Route path="/leaderboard" component={Leaderboard} />
+              )}
               {authedUser !== "" && (
                 <Route path="/questions/:urlId" component={Poll} />
               )}

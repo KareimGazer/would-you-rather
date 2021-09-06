@@ -7,13 +7,13 @@ import { showLoading, hideLoading } from "react-redux-loading";
 // const AUTHED_ID = "tylermcginnis";
 
 // uses redux-thunk paradigm
-export function handelInitialData() {
+export function handelInitialData(authedUser) {
   return (dispatch) => {
     dispatch(showLoading());
     return getInitialData().then(({ users, questions }) => {
       dispatch(recieveUsers(users));
       dispatch(recieveQuestions(questions));
-      dispatch(setAuthedUser(""));
+      dispatch(setAuthedUser(authedUser));
       dispatch(hideLoading());
     });
   };

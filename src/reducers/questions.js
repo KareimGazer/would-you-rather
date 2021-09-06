@@ -1,4 +1,8 @@
-import { RECIEVE_QUESTIONS, ADD_QUESTION } from "../actions/questions";
+import {
+  RECIEVE_QUESTIONS,
+  ADD_QUESTION,
+  ADD_ANSWER,
+} from "../actions/questions";
 
 // watch out from deep copy cases
 export function questions(state = {}, action) {
@@ -11,6 +15,8 @@ export function questions(state = {}, action) {
         ...state,
         [question.id]: question,
       };
+    case ADD_ANSWER:
+      return state;
     default:
       return state;
   }

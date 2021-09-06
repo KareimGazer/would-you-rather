@@ -1,4 +1,9 @@
-import { saveQuestionAnswer, saveQuestion, getUsers } from "../utils/api";
+import {
+  saveQuestionAnswer,
+  saveQuestion,
+  getUsers,
+  getQuestions,
+} from "../utils/api";
 import { showLoading, hideLoading } from "react-redux-loading";
 import { recieveUsers } from "./users";
 
@@ -34,6 +39,37 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
       .then((question) => dispatch(addQuestion(question)))
       .then(() => getUsers())
       .then((users) => dispatch(recieveUsers(users)))
+      .then(() => dispatch(hideLoading()));
+  };
+}
+
+function addAnswer(answer) {
+  return {
+    type: ADD_ANSWER,
+    answer,
+  };
+}
+
+// not optimistic update
+export function handleAddAnswer(qid, answer) {
+  return (dispatch, getState) => {
+    const { authedUser } = getState();
+    dispatch(showLoading());
+    console.log("save answer", qid, answer, authedUser);
+    return saveQuestionAnswer({
+      qid,
+      answer,
+      authedUser,
+    })
+      .then(() =>
+        dispatch(
+          addAnswer({
+            qid,
+            answer,
+            authedUser,
+          })
+        )
+      )
       .then(() => dispatch(hideLoading()));
   };
 }
