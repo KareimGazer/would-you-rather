@@ -10,6 +10,7 @@ class Leaderboard extends Component {
     var usersList = usersKeys.map((userKey) => {
       const user = users[userKey];
       return {
+        id: user.id,
         name: user.name,
         answersNum: Object.keys(user.answers).length,
         questionsNum: user.questions.length,
@@ -22,7 +23,7 @@ class Leaderboard extends Component {
       <div className="leaderboard center">
         <ul className="leaderboard-list">
           {usersList.map((user) => (
-            <li>
+            <li key={user.id}>
               <UserCard user={user} />
             </li>
           ))}

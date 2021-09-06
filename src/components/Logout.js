@@ -7,7 +7,7 @@ class Logout extends Component {
   logout = (e) => {
     e.preventDefault();
     // todo: Redirect to Home Page
-    this.props.history.push(`/login`);
+    this.props.history.push(`/`);
     // dispatch logout action
     const { dispatch } = this.props;
     dispatch(setAuthedUser(""));

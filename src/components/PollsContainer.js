@@ -3,3 +3,13 @@
 // when the user selects answered the url changes and the answered componets appear
 // when unaswered quetion is clicked redirects to question componenet
 // when aswered quetion is clicked redirects to question result componenet
+import React from "react";
+import PollNav from "./PollsNav";
+
+export default function PollsContainer() {
+  return (
+    <div className="center">
+      <PollNav></PollNav>
+    </div>
+  );
+}
