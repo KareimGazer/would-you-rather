@@ -6,6 +6,7 @@ import LoadingBar from "react-redux-loading";
 import Nav from "./Nav";
 import Login from "./Login";
 import NewQuestion from "./NewQuestion";
+import Leaderboard from "./Leaderboard";
 
 class App extends Component {
   componentDidMount() {
@@ -24,7 +25,10 @@ class App extends Component {
           {this.props.loading === true ? (
             <h1 className="center">Loading ...</h1>
           ) : (
-            <Route path="/add" component={NewQuestion} />
+            <div className="loaded-components">
+              <Route path="/add" component={NewQuestion} />
+              <Route path="/leaderboard" component={Leaderboard} />
+            </div>
           )}
         </div>
       </Router>
