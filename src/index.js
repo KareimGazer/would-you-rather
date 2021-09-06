@@ -18,3 +18,4 @@ ReactDOM.render(
 
 // look in utils/helpers
 // authed user
+// I think user is like a global variable to help set saveQuestion/saveAnswer
