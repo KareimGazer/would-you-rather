@@ -4,16 +4,16 @@ import { NavLink } from "react-router-dom";
 export default class PollNav extends Component {
   render() {
     return (
-      <nav className="">
+      <nav className="nav">
         <ul>
           <li>
-            <NavLink to="/" exact activeClassName="active">
-              <div>Unanswerd Questions</div>
+            <NavLink to="/unAnswered" exact activeClassName="active">
+              <div onClick={console.log("clicked1")}>Unanswerd Questions</div>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" exact activeClassName="active">
-              <div>Answerd Questions</div>
+            <NavLink to="/answered" exact activeClassName="active">
+              <div onClick={console.log("clicked2")}>Answerd Questions</div>
             </NavLink>
           </li>
         </ul>

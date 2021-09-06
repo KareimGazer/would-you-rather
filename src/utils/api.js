@@ -21,3 +21,7 @@ export function saveQuestion(info) {
 export function saveQuestionAnswer(info) {
   return _saveQuestionAnswer(info);
 }
+
+export function getUsers(info) {
+  return _getUsers(info);
+}

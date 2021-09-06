@@ -98,6 +98,20 @@ li {
   float: left;
 }
 
+/* polls */
+.polls-container {
+  width: 100%;
+  height: 100%;
+  max-width: 700px;
+  height: 800px;
+  padding: 10px;
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .tweet {
   width: 100%;
   max-width: 590px;

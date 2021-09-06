@@ -1,8 +1,5 @@
 import React from "react";
 
-const imgURL =
-  "https://equimper.gallerycdn.vsassets.io/extensions/equimper/react-native-react-redux/2.0.6/1602247317454/Microsoft.VisualStudio.Services.Icons.Default";
-
 export default function UserCard(props) {
   const { user } = props;
   return (
