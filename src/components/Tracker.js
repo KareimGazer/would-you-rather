@@ -15,7 +15,6 @@ var url = "";
 function usePageViews() {
   let location = useLocation();
   url = location;
-  console.log("URL", url);
 }
 
 function Login(props) {
@@ -38,7 +37,7 @@ function Login(props) {
             event.preventDefault();
             const authedUser = event.target.value;
             // todo: Redirect to Home Page
-            history.push(`${url.pathname}`);
+            history.push(`${url}`);
             // dispatch logout action
             dispatch(login(authedUser));
             console.log("User loged in");

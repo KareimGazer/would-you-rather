@@ -7,8 +7,8 @@ import Nav from "./Nav";
 import Login from "./Login";
 import NewQuestion from "./NewQuestion";
 import Leaderboard from "./Leaderboard";
-import PollNav from "./PollsNav";
 import PollsContainer from "./PollsContainer";
+import Poll from "./Poll";
 
 class App extends Component {
   componentDidMount() {
@@ -18,19 +18,23 @@ class App extends Component {
     // if (this.props.authedUser === null) {
     //   return <Redirect to="/login" />;
     // }
+    const { authedUser } = this.props;
     return (
       <Router>
         <div className="container">
           <LoadingBar />
           <Nav />
-          {this.props.authedUser === "" && <Route path="/" component={Login} />}
+          {authedUser === "" && <Route path="/" component={Login} />}
           {this.props.loading === true ? (
             <h1 className="center">Loading ...</h1>
           ) : (
             <div className="loaded-components">
               <Route path="/add" component={NewQuestion} />
               <Route path="/leaderboard" component={Leaderboard} />
-              {this.props.authedUser !== "" && (
+              {authedUser !== "" && (
+                <Route path="/questions/:urlId" component={Poll} />
+              )}
+              {authedUser !== "" && (
                 <Route path="/" exact component={PollsContainer} />
               )}
             </div>
