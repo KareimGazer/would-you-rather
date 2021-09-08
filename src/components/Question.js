@@ -5,21 +5,19 @@ import { handelInitialData } from "../actions/shared";
 
 class Question extends Component {
   state = {
-    option: "",
+    selectedOption: "",
   };
 
-  choose(event, option) {
-    event.preventDefault();
-    this.setState({ option });
-    console.log("Question State", option);
+  onValueChange(option) {
+    this.setState({ selectedOption: option });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { option } = this.state;
+    const { selectedOption } = this.state;
     const { dispatch, question, authedUser } = this.props;
-    dispatch(handleAddAnswer(question.id, "optionOne"));
+    dispatch(handleAddAnswer(question.id, selectedOption));
     dispatch(handelInitialData(authedUser));
 
     this.setState(() => ({
@@ -42,31 +40,33 @@ class Question extends Component {
           <h3>Would You Rather ... </h3>
           <div>
             <form className="" onSubmit={this.handleSubmit}>
-              <label>{question.optionOneText} </label>
-              <input
-                name="option-one"
-                type="radio"
-                value="optionOne"
-                className=""
-                id="choice"
-                onSelect={(event) => {
-                  this.choose(event, "optionOne");
-                }}
-              ></input>
-              <h3>OR</h3>
-              <label>{question.optionTwoText} </label>
-              <input
-                name="option-two"
-                type="radio"
-                value="optionTwo"
-                className=""
-                id="choice"
-                onSelect={(event) => {
-                  this.choose(event, "optionTwo");
-                }}
-              ></input>
+              <label>
+                <input
+                  name="option-one"
+                  type="radio"
+                  value="optionOne"
+                  checked={this.state.selectedOption === "optionOne"}
+                  onChange={() => this.onValueChange("optionOne")}
+                ></input>
+                {question.optionOneText}{" "}
+              </label>
 
-              <button className="btn" type="submit" disabled={false}>
+              <label>
+                <input
+                  name="option-two"
+                  type="radio"
+                  value="optionTwo"
+                  checked={this.state.selectedOption === "optionTwo"}
+                  onChange={() => this.onValueChange("optionTwo")}
+                ></input>
+                {question.optionTwoText}{" "}
+              </label>
+
+              <button
+                className="btn"
+                type="submit"
+                disabled={this.state.selectedOption === ""}
+              >
                 Submit
               </button>
             </form>

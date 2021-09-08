@@ -129,6 +129,12 @@ li {
   flex-direction: column;
 }
 
+.selected {
+  border: 1px solid #d80e0e;
+  border-radius: 3px;
+  padding: 10px;
+}
+
 /* Hacky but less typing in the video */
 .tweet-info > div > span:first-child {
   font-weight: bold;

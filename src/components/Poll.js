@@ -46,6 +46,8 @@ function mapStateToProps({ questions, users, authedUser }, props) {
       authorId: question.author,
       authorAvatar: users[question.author].avatarURL,
       authorName: users[question.author].name,
+      votes1: [...question.optionOne.votes],
+      votes2: [...question.optionTwo.votes],
     },
   };
 }
