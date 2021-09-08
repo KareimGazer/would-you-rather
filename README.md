@@ -3,8 +3,6 @@ This is a Website where users can make new polls and how how other users vote. t
 There is a leader board where the most helpful users are shown.
 This project is from the final assessment project for Udacity's React-Redux course.
 
-The starte template is from [reactnd-project-myreads-starter](https://github.com/udacity/reactnd-project-myreads-starter).
-
 ## Getting Started
 To get started:
 
