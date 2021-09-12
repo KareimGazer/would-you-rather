@@ -11,6 +11,25 @@ To get started:
 
 [Yarn installation](https://classic.yarnpkg.com/en/docs/install)
 
+# Folder Structure
+
+Refer to the following table for information about important directories and files in this repository.
+
+```
+would-you-rather
+├── public               Used By React App.
+├── src                  Source files.
+    ├── actions          actions passed to Redux reducers.
+    ├── components       React components.
+    ├── middleware       functions called before reducers.
+    ├── reducers         reducers used by Redux to manage state.
+    └── utils            simulates database.
+
+├── README.md            main documentation.
+├── package.json         used by npm for managing dependencies.
+└── yarn.lock            used by yarn for managing dependencies.
+```
+
 ## Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
