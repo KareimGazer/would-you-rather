@@ -34,4 +34,4 @@ would-you-rather
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Redux
-State is managed by Redux and logs are shown in the console for debugging purposes using the logger thunk.
+State is managed by [Redux](https://github.com/reduxjs/redux) and logs are shown in the console for debugging purposes using the logger [thunk](https://github.com/reduxjs/redux-thunk).
