@@ -3,13 +3,21 @@ This is a Website where users can make new polls and other users can vote. Users
 There is a leaderboard where the most helpful users are shown.
 This project is the final assessment project for Udacity's React-Redux course.
 
-## Getting Started
+## Up And Running
+### On Your Local Machine:
 To get started:
 
 * install all project dependencies with `yarn install`
 * start the development server with `yarn start`
 
 [Yarn installation](https://classic.yarnpkg.com/en/docs/install)
+
+### Using Docker
+1. in the root of the project run:
+`docker build -t your-image-name .` to build the image.
+2. `docker run -d -p 3000:3000 --name your-container-name your-image-name` to run the container in the background
+3. go to `http://localhost:3000/`
+4. Enjoy using the app!
 
 # Folder Structure
 
